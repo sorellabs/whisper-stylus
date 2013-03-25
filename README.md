@@ -1,21 +1,33 @@
-# Whisper: Stylus
-
-[![Build Status](https://travis-ci.org/killdream/whisper-stylus.png)](https://travis-ci.org/killdream/whisper-stylus)
+# Whisper: Stylus [![Build Status](https://travis-ci.org/killdream/whisper-stylus.png)](https://travis-ci.org/killdream/whisper-stylus)
 
 Compiles Stylus stylesheets.
 
 
-### Platform support
-
-This library assumes an ES5 environment, but can be easily supported in ES3
-platforms by the use of shims. Just include [es5-shim][] :3
-
-[![browser support](http://ci.testling.com/killdream/whisper-stylus.png)](http://ci.testling.com/killdream/whisper-stylus)
-
-
 ### Example
 
-( ... )
+Define your stylus options in the configuration:
+
+```js
+module.exports = function(whisper) {
+  whisper.configure({
+    stylus: {
+      files: ['stylus/*.styl'],
+      options: {
+        firebug: true,
+        linenos: true
+      }
+    }
+  })
+
+  require('whisper-stylus')(whisper)
+}
+```
+
+Then invoke the `stylus` task:
+
+```bash
+$ whisper stylus
+```
 
 
 ### Installing
@@ -27,17 +39,9 @@ Just grab it from NPM:
 
 ### Documentation
 
-A quick reference of the API can be built using [Calliope][]:
+Just invoke `whisper help stylus` to show the manual page for the `stylus`
+task.
 
-    $ npm install -g calliope
-    $ calliope build
-
-
-### Tests
-
-You can run all tests using Mocha:
-
-    $ npm test
 
 
 ### Licence
