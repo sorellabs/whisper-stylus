@@ -32,7 +32,7 @@
         ]
       }
     ]
-  }
+  },
   "dependencies": {
     "prelude-ls": "~0.6.0",
     "stylus": "~0.32.1",
