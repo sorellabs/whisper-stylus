@@ -1,13 +1,11 @@
 {
   "name": "whisper-stylus",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Compiles Stylus stylesheets.",
   "main": "./lib/index.js",
   "devDependencies": {
     "LiveScript": "~1.1.1",
-    "mocha": "~1.8.1",
-    "es5-shim": "~2.0.5",
-    "browserify": "~2.4.3"
+    "mocha": "~1.8.1"
   },
   "scripts": {
     "cc": "./node_modules/.bin/lsc -o lib -c src/*.ls",
@@ -27,18 +25,24 @@
   "calliope": {
     "output": "docs/api",
     "copyright": "© 2013 Quildreen \"Sorella\" Motta",
-    "packages": [{ "files": [ "src/*.ls" ] }]
-  },
-  "testling": {
-    "files": "test/browser/suite.js",
-    "preprocess": "npm run-script pretest-browser",
-    "browsers": {
-      "ie": [8, 9, 10],
-      "firefox": [15, "nightly"],
-      "chrome": [21, 22, "canary"],
-      "opera": [10, 12, "next"],
-      "safari": [5.1]
-    },
-    "harness": "mocha"
+    "packages": [
+      {
+        "files": [
+          "src/*.ls"
+        ]
+      }
+    ]
   }
+  "dependencies": {
+    "prelude-ls": "~0.6.0",
+    "stylus": "~0.32.1",
+    "cassie": "~1.4.1",
+    "glob": "~3.1.21"
+  },
+  "keywords": [
+    "whisper-plugin",
+    "stylus",
+    "css",
+    "preprocessor"
+  ]
 }
